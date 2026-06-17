@@ -2,14 +2,15 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Устанавливаем uv для быстрой установки зависимостей
+# Install uv for fast dependency installation
 RUN pip install uv
 
-# Копируем pyproject.toml и устанавливаем зависимости
+# Copy pyproject.toml and install dependencies
 COPY pyproject.toml .
 RUN uv pip install --system .
 
-# Копируем приложение
+# Copy application
 COPY . .
 
-CMD ["python", "-m", "app.main"]
+# Run migrations and start app
+CMD ["sh", "-c", "alembic upgrade head && python -m app.main"]
