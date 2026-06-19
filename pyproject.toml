@@ -9,7 +9,6 @@ description = "Async REST API for wallet management"
 requires-python = ">=3.11"
 dependencies = [
     "sanic==23.6.0",
-    "sanic-ext==23.6.0",
     "sqlalchemy==2.0.23",
     "asyncpg==0.29.0",
     "alembic==1.13.1",
@@ -17,8 +16,6 @@ dependencies = [
     "pydantic-settings==2.1.0",
     "python-jose[cryptography]==3.3.0",
     "passlib[bcrypt]==1.7.4",
-    "python-multipart==0.0.6",
-    "uvicorn==0.25.0",
 ]
 
 [project.optional-dependencies]

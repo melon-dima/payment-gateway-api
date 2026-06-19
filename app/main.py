@@ -5,7 +5,6 @@ from app.routes.admin import admin_bp
 from app.routes.webhook import webhook_bp
 
 app = Sanic("WalletAPI")
-# app.config.CORS_ORIGINS = "*" # Раскомментировать, если нужен CORS
 
 app.blueprint(auth_bp)
 app.blueprint(user_bp)
