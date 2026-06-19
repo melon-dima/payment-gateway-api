@@ -12,11 +12,5 @@ app.blueprint(user_bp)
 app.blueprint(admin_bp)
 app.blueprint(webhook_bp)
 
-@app.before_server_start
-async def setup_db(app, loop):
-    # В продакшене таблицы создаются через Alembic.
-    # Здесь мы просто убеждаемся, что движок инициализирован.
-    pass
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True, auto_reload=True)
